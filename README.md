@@ -1,7 +1,24 @@
 # ansible-workflow-k8s
-project-root/ ├── .github/ │ ├── workflows/ │ │ └── ci-cd.yml # GitHub Actions workflow for CI/CD ├── ansible/ │ ├── playbooks/ │ │ ├── deploy_cluster.yml # Provisions Kubernetes cluster │ │ ├── deploy_app.yml # Deploys the application │ │ ├── test_app.yml # Runs application tests │ │ ├── cleanup_resources.yml # Cleans up resources │ ├── roles/ │ │ ├── kubernetes_provisioning/ # Role for Kubernetes setup │ │ ├── application_deployment/ # Role for app deployment │ │ ├── cleanup/ # Role for cleanup tasks │ ├── inventory/ │ │ ├── hosts.ini # Inventory file for Ansible │ └── ansible.cfg # Ansible configuration └── README.md # Project documentation
-
-Key Components
+```
+project-root/
+├── .github/
+│   ├── workflows/
+│   │   └── ci-cd.yml  # GitHub Actions workflow for CI/CD
+├── ansible/
+│   ├── playbooks/
+│   │   ├── deploy_cluster.yml       # Provisions Kubernetes cluster
+│   │   ├── deploy_app.yml           # Deploys the application
+│   │   ├── test_app.yml             # Runs application tests
+│   │   ├── cleanup_resources.yml    # Cleans up resources
+│   ├── roles/
+│   │   ├── kubernetes_provisioning/ # Role for Kubernetes setup
+│   │   ├── application_deployment/ # Role for app deployment
+│   │   ├── cleanup/                # Role for cleanup tasks
+│   ├── inventory/
+│   │   ├── hosts.ini                # Inventory file for Ansible
+│   └── ansible.cfg                  # Ansible configuration
+└── README.md                        # Project documentation
+```
 1. Playbooks (ansible/playbooks/)
 
 Playbooks are the main scripts that define your CI/CD tasks.
