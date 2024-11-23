@@ -19,7 +19,7 @@ project-root/
 │   └── ansible.cfg                  # Ansible configuration
 └── README.md                        # Project documentation
 ```
-1. Playbooks (ansible/playbooks/)
+*** Playbooks (ansible/playbooks/)
 
 Playbooks are the main scripts that define your CI/CD tasks.
 
@@ -29,7 +29,7 @@ deploy_app.yml: Deploys your application.
 test_app.yml: Runs application tests.
 cleanup_resources.yml: Cleans up resources after testing.
 
-2. Roles (ansible/roles/)
+*** Roles (ansible/roles/)
 Roles group related tasks into reusable components.
 
 Examples:
@@ -37,23 +37,24 @@ kubernetes_provisioning: Handles Kubernetes cluster setup.
 application_deployment: Manages application deployment tasks.
 cleanup: Removes CRDs, namespaces, and other resources.
 
-3. Inventory (ansible/inventory/)
+*** Inventory (ansible/inventory/)
 Defines the target nodes or environments for your tasks.
 
 Example: hosts.ini
-ini
-
+```
 [k8s_nodes]
 192.168.1.10 ansible_user=ubuntu
 
 [registry]
 192.168.1.20 ansible_user=ubuntu
-4. Ansible Configuration (ansible/ansible.cfg)
+```
+*** Ansible Configuration (ansible/ansible.cfg)
 Central configuration for Ansible behavior.
 Example:
-ini
 
+```
 [defaults]
 inventory = ./inventory/hosts.ini
 roles_path = ./roles
 host_key_checking = False
+```
